@@ -1,0 +1,11 @@
+<h1>SumarNumeros</h1>
+<form (ngSubmit)="sumarNumeros()" #sumarForm="ngForm">
+    <label>Numero1: </label>
+    <input type="number" name="caja1" #caja1/>
+    <label>Numero2: </label>
+    <input type="number" name="caja2" #caja2/>
+    <button>Enviar</button>
+</form>
+<hr/>
+<h1>La suma de los números es: {{suma}}</h1>
+<!-- <h1>{{cajaNombre.nativeElement.value}}</h1> -->

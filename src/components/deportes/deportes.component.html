@@ -1,0 +1,37 @@
+<div>
+    <h1>Ejemplo directivas Angular</h1>
+    <h3>Inline</h3>
+    <ul>
+        <li *ngFor="let num of numeros" [style.color] = "num % 2 == 0 ? 'green' : 'red'">
+            {{num}}
+        </li>
+    </ul>
+    <hr/>
+    <h3>Inline class</h3>
+    <ul>
+        <li *ngFor="let num of numeros" [class.estilopar]="num % 2 == 0" [class.estiloimpar]="num % 2 == 1">
+            {{num}}
+        </li>
+    </ul>
+    <hr/>
+    <h3>ngClass</h3>
+    <ul>
+        <li *ngFor="let num of numeros" [ngClass]="{estilopar: num % 2 == 0, estiloimpar: num % 2 == 1}">
+            {{num}}
+        </li>
+    </ul>
+    <hr/>
+    <h2>Numero de deportes {{deportes.length}}</h2>
+    <div *ngIf="deportes.length > 7; then menor; else mayor"></div>
+    <ng-template #mayor>
+        <h2 style="color:green">Tienes mas de 7 deportes</h2>
+    </ng-template>
+    <ng-template #menor>
+        <h2 style="color:red">No tienes mas de 7 deportes</h2>
+    </ng-template>
+    <ul>
+        <li *ngFor="let deporte of deportes; let i = index">
+            {{i}} - {{deporte}}
+        </li>
+    </ul>
+</div>
